@@ -6,7 +6,7 @@ import shield from "../assets/shield.png";
 
 const ChooseSection = () => {
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full md:py-16 bg-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="bg-white border border-[#E5E5EA] shadow-md rounded-2xl p-10 flex flex-col justify-between">
 

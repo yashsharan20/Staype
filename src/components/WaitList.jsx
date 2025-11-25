@@ -24,10 +24,9 @@ const handleSubmit = async (e) => {
       body: new URLSearchParams({ Email: email }),
     });
     const text = await res.text();
-    console.log("Response:", text);
+    toast.success("You joined the waitlist");
     e.target.reset();
   } catch (err) {
-    console.error(err);
     e.target.reset();
     toast.success("You joined the waitlist");
   }
@@ -36,7 +35,7 @@ const handleSubmit = async (e) => {
 
 const Waitlist = () => {
   return (
-    <section id="waitlist" className=" bg-[#1F1F22] flex flex-col items-center justify-center text-center px-4 py-24">
+    <section id="waitlist" className=" bg-[#1F1F22] flex flex-col items-center justify-center text-center px-4 pt-10 py-14 md:py-24">
       <ToastContainer />
       <div className="bg-[#A23BEA] p-4 rounded-2xl mb-6 shadow-lg">
         <img src={waitlistIcon} className="w-6 h-6" alt="waitlist icon" />
@@ -49,16 +48,26 @@ const Waitlist = () => {
         Join our waitlist and be among the first to experience smarter, vibe-based roommate matching. No spam, just updates.
       </p>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-xl mb-6 bg-white/5 p-2 rounded-2xl border border-white/10">
-        <form className="flex w-full sm:flex-row gap-3" onSubmit={handleSubmit}>
-          <input name="email" type="email" placeholder="Enter your email address"
-            className="w-full px-5 py-3 rounded-lg inter text-[#99A1AF] bg-white font-normal waitlist-placeholder placeholder-[#99A1AF] text-[14px] focus:outline-none shadow-sm"
-          />
-          <button type="submit" className="w-full inter sm:w-auto px-6 cursor-pointer whitespace-nowrap h-[46px] rounded-lg font-semibold text-white text-[16px] bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] hover:opacity-90 transition">
-            Join Waitlist
-          </button>
-        </form>
-      </div>
+      <div className="flex items-center justify-center w-full max-w-xl mb-6 bg-white/5 p-2 rounded-2xl border border-white/10">
+  <form 
+    className="flex flex-col sm:flex-row w-full gap-3" 
+    onSubmit={handleSubmit}
+  >
+    <input 
+      name="email" 
+      type="email" 
+      placeholder="Enter your email address"
+      className="w-full px-5 py-3 rounded-lg inter text-[#99A1AF] bg-white font-normal waitlist-placeholder placeholder-[#99A1AF] text-[14px] focus:outline-none shadow-sm"
+    />
+
+    <button 
+      type="submit" 
+      className="w-full sm:w-auto px-6 h-[46px] cursor-pointer rounded-lg inter font-semibold text-white text-[16px] bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] hover:from-[#8b2ccf] hover:to-[#8b2ccf] transition whitespace-nowrap"
+    >
+      Join Waitlist
+    </button>
+  </form>
+</div>
 
       <p className="text-[#FFFFFF80] font-normal inter waitlist-para text-sm mb-10">We respect your privacy. Unsubscribe at any time.</p>
 

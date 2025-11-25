@@ -30,8 +30,8 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="text-center mb-12">
+    <section className="md:py-20 py-10 bg-white">
+      <div className="text-center md:mb-12 mb-5">
         <p className="text-base text-[#A23BEA] font-normal inter mb-1">Testimonials</p>
         <h2 className="text-3xl poppins md:text-4xl font-bold text-[#1A1A1A]">
           What Users Say

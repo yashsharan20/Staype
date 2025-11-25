@@ -10,7 +10,6 @@ const QuizSection = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const getVal = (name) => e.target[name].value.trim();
         const Name = getVal("name");
         const Phone = getVal("phone");
@@ -58,7 +57,6 @@ const QuizSection = () => {
             toast.error("Please select at least one preference");
             return;
         }
-
         const preferences = Array.from(
             e.target.querySelectorAll("input[name='preferences']:checked")
         )
@@ -74,7 +72,6 @@ const QuizSection = () => {
             Budget: e.target.budget.value,
             Preferences: preferences
         };
-
         const url = "https://script.google.com/macros/s/AKfycbycv9mcwHy-E45Aijh9Azh42ZlP38qx3zgz-vQuFMiKvZDsyVKeTwk0nHfa917CgCLsNA/exec";
         try {
             const res = await fetch(url, {
@@ -86,7 +83,6 @@ const QuizSection = () => {
             setShowModal(true);
             document.body.classList.add("overflow-hidden");
             e.target.reset();
-
         } catch (error) {
             console.error("Error:", error);
             setShowModal(true);
@@ -100,7 +96,7 @@ const QuizSection = () => {
     };
 
     return (
-        <section className="w-full  flex justify-center py-12 px-4 bg-white">
+        <section className="w-full flex justify-center py-12 px-4 bg-white">
             <ToastContainer />
             <div className="w-full max-w-xl bg-white">
                 {/* Title */}
@@ -112,11 +108,11 @@ const QuizSection = () => {
                 </p>
 
                 {/* Form Container */}
-                <form onSubmit={handleSubmit} className="space-y-4 bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                <form onSubmit={handleSubmit} className="space-y-4 bg-white border border-[#E9E9EC] rounded-xl p-6 ">
 
                     {/* Name */}
                     <div>
-                        <label className="text-[#001F1C] inter font-normal text-base">Name</label>
+                        <label className="text-[#001F1C] inter font-normal text-base">Name <span className="text-red-500">*</span></label>
                         <input
                             type="text" name="name"
                             placeholder="Enter Your Name"
@@ -126,7 +122,7 @@ const QuizSection = () => {
 
                     {/* Phone Number */}
                     <div>
-                        <label className="text-[#001F1C] inter font-normal text-base">Phone Number</label>
+                        <label className="text-[#001F1C] inter font-normal text-base">Phone Number <span className="text-red-500">*</span></label>
                         <input
                             type="text" name="phone"
                             placeholder="Enter Your Phone Number"
@@ -136,7 +132,7 @@ const QuizSection = () => {
 
                     {/* Location */}
                     <div>
-                        <label className="text-[#001F1C] inter font-normal text-base">Location</label>
+                        <label className="text-[#001F1C] inter font-normal text-base">Location <span className="text-red-500">*</span></label>
                         <select name="location" className="text-[#bbbbbb] border-[#9E9E9E] text-sm font-normal inter mt-1 w-full px-4 py-3 border rounded-sm focus:ring-1 focus:ring-[#C77DFF] focus:outline-none">
                             <option value="" disabled selected>Select Location</option>
                             <option>Mumbai</option>
@@ -147,7 +143,7 @@ const QuizSection = () => {
 
                     {/* Type of Property */}
                     <div>
-                        <label className="text-[#001F1C] inter font-normal text-base">Type of Property</label>
+                        <label className="text-[#001F1C] inter font-normal text-base">Type of Property <span className="text-red-500">*</span></label>
                         <select name="propertytype" className="text-[#bbbbbb] border-[#9E9E9E] text-sm font-normal inter mt-1 w-full px-4 py-3 border rounded-sm focus:ring-1 focus:ring-[#C77DFF] focus:outline-none">
                             <option value="" disabled selected>Select Type</option>
                             <option>Apartment</option>
@@ -159,7 +155,7 @@ const QuizSection = () => {
 
                     {/* What are you looking for */}
                     <div>
-                        <label className="text-[#001F1C] inter font-normal text-base">What are you looking for?</label>
+                        <label className="text-[#001F1C] inter font-normal text-base">What are you looking for? <span className="text-red-500">*</span></label>
                         <select name="lookingfor" className="text-[#bbbbbb] border-[#9E9E9E] text-sm font-normal inter mt-1 w-full px-4 py-3 border rounded-sm focus:ring-1 focus:ring-[#C77DFF] focus:outline-none">
                             <option value="" disabled selected>Select Type</option>
                             <option>Shared Apartment</option>
@@ -170,7 +166,7 @@ const QuizSection = () => {
 
                     {/* Budget Range */}
                     <div>
-                        <label className="text-[#001F1C] inter font-normal text-base">Budget Range</label>
+                        <label className="text-[#001F1C] inter font-normal text-base">Budget Range <span className="text-red-500">*</span></label>
                         <input name="budget"
                             type="text"
                             placeholder="E.g., ₹8,000 - ₹15,000"
@@ -180,7 +176,7 @@ const QuizSection = () => {
 
                     {/* Preferences */}
                     <div>
-                        <label className="text-[#001F1C] inter font-normal text-base block">Preferences</label>
+                        <label className="text-[#001F1C] inter font-normal text-base block">Preferences <span className="text-red-500">*</span></label>
 
                         <div className="grid grid-cols-2 gap-y-2 mt-2">
                             <label className="flex items-center space-x-2">
@@ -208,7 +204,7 @@ const QuizSection = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full py-3 inter mt-3 text-white bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] rounded-lg font-medium cursor-pointer transition"
+                        className="w-full py-3 inter mt-3 text-white bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] hover:from-[#8b2ccf] hover:to-[#8b2ccf] rounded-lg font-medium cursor-pointer transition"
                     >
                         Submit my Quiz
                     </button>
@@ -232,8 +228,8 @@ const QuizSection = () => {
 
                             {/* Button */}
                             <button
-                                className="px-6 py-3 cursor-pointer inter font-medium bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] hover:bg-[#912fd7] 
-                                     text-white rounded-md text-base transition"
+                                className="px-6 py-3 cursor-pointer inter font-medium bg-gradient-to-r from-[#A23BEA] to-[#C77DFF]  
+                                     text-white rounded-md text-base hover:from-[#8b2ccf] hover:to-[#8b2ccf] transition"
                                 onClick={closeModal}
                             >
                                 Back to Home Page

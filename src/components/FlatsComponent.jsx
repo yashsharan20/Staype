@@ -124,7 +124,7 @@ const FlatsComponent = () => {
   const [tab, setTab] = useState("flats");
 
   return (
-    <div className="max-w-6xl mx-auto  flex flex-col items-center pt-20 pb-10">
+    <div className="max-w-6xl mx-auto flex flex-col items-center md:pt-20 md:pb-10 py-10">
       <h2 className="text-3xl poppins md:text-4xl font-bold mb-2 text-center">
         Available Flats & Flatmates in Bengaluru
       </h2>
@@ -137,7 +137,7 @@ const FlatsComponent = () => {
           onClick={() => setTab("flats")}
           className={`px-6 py-2 rounded-lg cursor-pointer text-sm inter font-normal transition ${tab === "flats"
             ? "bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] text-white"
-            : "text-[#A23BEA] border border-[#A23BEA]"
+            : "text-[#A23BEA] border border-[#A23BEA] "
             }`}
         >
           Flats
@@ -145,9 +145,9 @@ const FlatsComponent = () => {
 
         <button
           onClick={() => setTab("flatmates")}
-          className={`px-6 py-2 rounded-lg cursor-pointer text-sm inter font-normal transition ${tab === "flatmates"
+          className={`px-6 py-2 rounded-lg cursor-pointer  text-sm inter font-normal transition ${tab === "flatmates"
             ? "bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] text-white"
-            : "text-[#A23BEA] border border-[#A23BEA]"
+            : "text-[#A23BEA]  border border-[#A23BEA]"
             }`}
         >
           Flatmates
@@ -222,11 +222,11 @@ const FlatsComponent = () => {
                   Vibe Match</span>
               </div>
               <div className="flex items-center justify-between mt-5 gap-3">
-                <button className="w-[200px] inter font-medium bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] cursor-pointer text-white py-3 rounded-md text-sm">
+                <button className="w-[200px] inter font-medium bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] hover:from-[#8b2ccf] hover:to-[#8b2ccf] cursor-pointer text-white py-3 rounded-md text-sm">
                   Match My Vibe
                 </button>
 
-                <button className="border border-purple-500 inter font-medium text-[#A23BEA] rounded-xl cursor-pointer w-21 py-3 text-sm flex items-center justify-center">
+                <button className="border border-purple-500 hover:bg-gray-100 inter font-medium text-[#A23BEA] rounded-xl cursor-pointer w-21 py-3 text-sm flex items-center justify-center">
                   <img src={Comment} className="pe-1" alt="setting" /> Chat
                 </button>
               </div>
@@ -265,7 +265,7 @@ const FlatsComponent = () => {
                 <span className="font-normal">Deposit {item.deposit}</span>
               </div>
 
-              <p className="text-sm inter text-[#7A7A7A] mt-1">
+              <p className="text-sm intertext-[#7A7A7A] mt-1">
                 Available from {item.available}
               </p>
 
@@ -286,14 +286,14 @@ const FlatsComponent = () => {
               </p>
 
               <div className="flex items-center mt-4">
-                <button className="flex-1 w-[111px] inter font-medium cursor-pointer bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] text-white rounded-md text-sm h-12 flex items-center justify-center">
+                <button className="flex-1 w-[111px] inter font-medium cursor-pointer bg-gradient-to-r from-[#A23BEA] to-[#C77DFF] hover:from-[#8b2ccf] hover:to-[#8b2ccf] text-white rounded-md text-sm h-12 flex items-center justify-center">
                   Match Your Vibe
                 </button>
                 <div className="flex items-center gap-2 ml-4">
-                  <button className="w-12 h-9 flex items-center justify-center border-2 border-[#A23BEA] cursor-pointer rounded-full">
+                  <button className="w-12 h-9 flex hover:bg-gray-100 items-center justify-center border-2 border-[#A23BEA] cursor-pointer rounded-full">
                     <img src={Setting} alt="setting" />
                   </button>
-                  <button className="w-12 h-9 flex items-center justify-center border-2 border-[#A23BEA] cursor-pointer rounded-full ">
+                  <button className="w-12 h-9 flex hover:bg-gray-100 items-center justify-center border-2 border-[#A23BEA] cursor-pointer rounded-full ">
                     <img src={Comment} alt="comment" />
                   </button>
                 </div>

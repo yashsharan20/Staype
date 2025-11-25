@@ -41,7 +41,7 @@ const FeatureSection = () => {
     ];
 
     return (
-        <section className="w-full py-20 bg-gray-50">
+        <section className="w-full md:py-20 py-12 bg-gray-50">
             <div className="max-w-6xl mx-auto text-center">
                 <p className="text-base text-[#A23BEA] font-normal inter">Features</p>
                 <h2 className="text-3xl poppins md:text-4xl font-bold text-[#1A1A1A] mt-2">
@@ -51,7 +51,7 @@ const FeatureSection = () => {
                     Everything you need to find your perfect flats and flatmates match in one platform.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-5 md:mt-10 mt-5">
                     {features.map((item, index) => (
                         <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border hover:shadow-md transition">
                             <div className="mb-4">
