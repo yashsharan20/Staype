@@ -1,79 +1,77 @@
 import React from "react";
-import Google from "../assets/Component 123.png"
-import Apple from "../assets/Component 124.png"
-import hero1 from "../assets/general.png";
-import hero2 from "../assets/bathroom.png";
-import hero3 from "../assets/kitchen.png";
-import hero4 from "../assets/bedroom.png";
+import group from "../assets/group.png";
+import check from "../assets/check.png";
+import { useNavigate } from "react-router-dom";
+
+
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
-    <section className="bg-white py-16 px-6 text-center">
-      {/* Heading */}
-      <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-        INDIA’S FIRST{" "}
-        <span className="text-[#D84223] bg-[#FFC2B5] px-5 rounded-[20px] italic">
-          QUICK SERVICE
-        </span>{" "}
-        APP
-      </h1>
+    <section className="bg-[#F3E8FF] py-20 px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-      {/* Subtext */}
-      <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-        We offer on-demand home services with a 15-minute response time to
-        empower urban households.
-      </p>
+        <div className="text-center md:text-left">
+          <div className="inline-flex items-center bg-white border shadow-lg px-4 py-1.5 rounded-full mb-6">
+            <span className="w-2 h-2 bg-gradient-to-r from-[#a846ee] to-[#C77DFF] rounded-full mr-2"></span>
+            <span className="text-[#52525B] inter font-medium text-base">Find your perfect match</span>
+          </div>
 
-      {/* Store Buttons */}
-      <div className="flex justify-center gap-4 mb-12">
-        <a
-          href="#"
-          className="transition-transform hover:scale-105"
-        >
+          <h1 className="md:text-5xl text-4xl poppins md:pr-16 font-extrabold text-[#3E086E] leading-tight">
+            Find your people
+            before finding
+            your place.
+          </h1>
+
+          <p className="text-[#52525B] inter font-normal mt-5 max-w-lg">
+            This platform helps you discover compatible flatmates who
+            share your vibe, lifestyle, and goals — so living together
+            feels effortless.
+          </p>
+
+          <div className="flex gap-4 mt-8">
+            <button onClick={()=>navigate('/quiz')} className="bg-gradient-to-r font-medium inter from-[#A23BEA] to-[#C77DFF] cursor-pointer text-base text-white py-3 px-6 rounded-xl shadow-md transition">
+              Take the Vibe Quiz
+            </button>
+            <button  onClick={() => {document.getElementById("listing")?.scrollIntoView({ behavior: "smooth" });}}  className="bg-white cursor-pointer inter hover:bg-gray-100 border border-[#A23BEA] text-[#A23BEA] font-normal py-3 px-6 rounded-xl shadow-sm transition">
+              Explore Listings
+            </button>
+          </div>
+
+          <div className="flex gap-10 mt-12 flex-wrap">
+            <div className="flex items-center gap-3 border-r border-[#7A7A7A] pr-6">
+              <img src={check} alt="check" className="w-5 h-5" />
+              <div>
+                <p className="text-2xl poppins font-medium text-[#1A1A1A]">500+</p>
+                <p className="text-[#4A4A4A] inter font-normal text-sm">Early users</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 border-r border-[#7A7A7A] pr-6">
+              <img src={check} alt="check" className="w-5 h-5" />
+              <div>
+                <p className="text-2xl poppins font-medium text-[#1A1A1A]">1200+</p>
+                <p className="text-[#4A4A4A] inter font-normal text-sm">Matched made</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 border-r border-[#7A7A7A] pr-6">
+              <img src={check} alt="check" className="w-5 h-5" />
+              <div>
+                <p className="text-2xl poppins font-medium text-[#1A1A1A]">98%</p>
+                <p className="text-[#4A4A4A] inter font-normal text-sm">Success rate</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div className="flex justify-center">
           <img
-            src={Google}
-            alt="Get it on Google Play"
-            className="h-12 w-40"
+            src={group}
+            alt="Hero Dashboard"
+            className="w-full md:h-100"
           />
-        </a>
-        <a
-          href="#"
-          className="transition-transform hover:scale-105"
-        >
-          <img
-            src={Apple}
-            alt="Download on App Store"
-            className="h-12 w-40"
-          />
-        </a>
-      </div>
+        </div>
 
-      {/* Image Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <img
-          src={hero1}
-          alt="Service 1"
-          className="rounded-2xl w-full object-cover h-56 sm:h-64"
-        />
-        <img
-         src={hero2}
-          alt="Service 2"
-          className="rounded-2xl w-full object-cover h-56 sm:h-64"
-        />
-        <img
-          src={hero3}
-          alt="Service 3"
-          className="rounded-2xl w-full object-cover h-56 sm:h-64 sm:col-span-1 sm:row-span-2 hidden sm:block"
-        />
-        <img
-          src={hero4}
-          alt="Service 4"
-          className="rounded-2xl w-full object-cover h-56 sm:h-64"
-        />
-        <img
-           src={hero1}
-          alt="Service 5"
-          className="rounded-2xl w-full object-cover h-56 sm:h-64"
-        />
       </div>
     </section>
   );

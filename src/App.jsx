@@ -1,27 +1,37 @@
 import './App.css'
-import Faq from './components/Faq'
-import FeaturesSection from './components/FeaturesSection'
 import Footer from './components/Footer'
-import Top from './components/Top'
-import HowItWorks from "./components/HowItWorks";
-
 import React from 'react'
-import ServicesCarousel from './components/ServiceCarousel'
 import HeroSection from './components/HeroSection'
 import Navbar from './components/Navbar'
+import Waitlist from './components/WaitList'
+import Testimonials from './components/Testimonials'
+import FlatsComponent from './components/FlatsComponent'
+import ChooseSection from './components/ChooseSection'
+import FeatureSection from './components/FeatureSection'
+import { Routes, Route } from 'react-router-dom'
+import QuizSection from './components/QuizSection'
 function App() {
   return (
     <>
-     <div className="min-h-screen flex flex-col">
-        <Top/>
-        <Navbar/>
-        <HeroSection/>
-        <HowItWorks/>
-         <FeaturesSection/>
-         <ServicesCarousel/>
-        <Faq/>
-        <Footer/>
-     </div>
+      <div className="min-h-screen flex flex-col">
+        <Routes>
+          <Route path="/" element={<>
+            <Navbar />
+            <HeroSection />
+            <div class="md:px-0 px-3">
+              <FlatsComponent />
+              <ChooseSection />
+              <FeatureSection />
+              <Testimonials />
+            </div>
+            <Waitlist />
+            <Footer />
+          </>} />
+            <Route path="/quiz" element={<QuizSection/>}/>
+        </Routes>
+
+
+      </div>
     </>
   )
 }
